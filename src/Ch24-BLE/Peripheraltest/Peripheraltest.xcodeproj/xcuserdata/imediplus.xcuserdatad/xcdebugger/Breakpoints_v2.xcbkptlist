@@ -14,8 +14,8 @@
             filePath = "Peripheraltest/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "peripheralManagerDidUpdateState(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,13 +30,13 @@
             filePath = "Peripheraltest/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "peripheralManager(_:didReceiveWrite:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "4F713033-02DF-4BEF-B176-D1E10569DB0C - 9288bdc0e2a1284b"
+                  uuid = "4F713033-02DF-4BEF-B176-D1E10569DB0C - 9288bdc0e2a128aa"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -46,12 +46,12 @@
                   urlString = "file:///Users/imediplus/imediplus/Shiuan/swift/lab-swift/src/Ch24-BLE/Peripheraltest/Peripheraltest/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "161"
-                  endingLineNumber = "161"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
                   offsetFromSymbolStart = "1676">
                </Location>
                <Location
-                  uuid = "4F713033-02DF-4BEF-B176-D1E10569DB0C - 918a1d79acaa7542"
+                  uuid = "4F713033-02DF-4BEF-B176-D1E10569DB0C - 918a1d79acaa7565"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -61,8 +61,8 @@
                   urlString = "file:///Users/imediplus/imediplus/Shiuan/swift/lab-swift/src/Ch24-BLE/Peripheraltest/Peripheraltest/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "162"
-                  endingLineNumber = "162"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
                   offsetFromSymbolStart = "108">
                </Location>
             </Locations>

@@ -12,7 +12,6 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
 
     @IBOutlet var textView: NSTextView!
     @IBOutlet weak var textField: NSTextField!
-    @IBOutlet weak var enterButton: NSButton!
     
     enum SendDataError: Error {
         case CharacteristicNotFound
@@ -180,7 +179,7 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
     
     }
     
-    @IBAction func Enter(_ sender: NSButtonCell) {
+    @IBAction func enterButton(_ sender: NSButtonCell) {
        //按下Enter按鈕
         let string = textField.stringValue
         
