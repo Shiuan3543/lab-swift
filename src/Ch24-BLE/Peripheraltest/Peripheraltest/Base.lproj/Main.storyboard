@@ -759,6 +759,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="enterButton" destination="4ha-HZ-Vf5" id="3nv-C8-vTf"/>
                         <outlet property="textField" destination="sXl-5j-zSy" id="ucH-Z8-0fD"/>
                         <outlet property="textView" destination="dRW-xb-bhL" id="7Im-S6-aJi"/>
                     </connections>

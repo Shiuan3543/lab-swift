@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "186828DE-1F7E-44B6-B566-B93ACEAAAE10"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D20072C5-7E60-4320-B23C-F92D66C14FA4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Peripheraltest/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "peripheralManagerDidUpdateState(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F713033-02DF-4BEF-B176-D1E10569DB0C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Peripheraltest/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "peripheralManager(_:didReceiveWrite:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4F713033-02DF-4BEF-B176-D1E10569DB0C - 9288bdc0e2a1284b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Peripheraltest.ViewController.peripheralManager(_: __C.CBPeripheralManager, didReceiveWrite: Swift.Array&lt;__C.CBATTRequest&gt;) -&gt; ()"
+                  moduleName = "Peripheraltest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/imediplus/imediplus/Shiuan/swift/lab-swift/src/Ch24-BLE/Peripheraltest/Peripheraltest/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "1676">
+               </Location>
+               <Location
+                  uuid = "4F713033-02DF-4BEF-B176-D1E10569DB0C - 918a1d79acaa7542"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Peripheraltest.ViewController.peripheralManager(_: __C.CBPeripheralManager, didReceiveWrite: Swift.Array&lt;__C.CBATTRequest&gt;) -&gt; ()"
+                  moduleName = "Peripheraltest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/imediplus/imediplus/Shiuan/swift/lab-swift/src/Ch24-BLE/Peripheraltest/Peripheraltest/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

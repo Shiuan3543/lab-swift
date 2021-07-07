@@ -12,6 +12,7 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
 
     @IBOutlet var textView: NSTextView!
     @IBOutlet weak var textField: NSTextField!
+    @IBOutlet weak var enterButton: NSButton!
     
     enum SendDataError: Error {
         case CharacteristicNotFound
@@ -25,7 +26,15 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
     //記錄所有的characteristic
     var charDictionary = [String: CBMutableCharacteristic]()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        let queue = DispatchQueue.global()//將觸發No.1 method
+        peripheralManager = CBPeripheralManager(delegate: self, queue: queue)
+    }
+    
     //No.1 method
+    //註冊service 與 characteristic到這個藍牙裝置中
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         //先判斷藍芽是否開啟 ,如果不是藍芽4.X,也回傳回店員未開啟
         guard peripheral.state == .poweredOn else {
@@ -38,7 +47,7 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
         var characteristic: CBMutableCharacteristic
         var charArray = [CBCharacteristic]()
         
-        //Start setting service and characteristic
+        //開始設定 service 與 characteristic
         service = CBMutableService(type: CBUUID(string: A001_SERVICE), primary: true)
         characteristic = CBMutableCharacteristic(
             type: CBUUID(string: C001_CHARACTERISTIC),
@@ -54,19 +63,24 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
         service.characteristics = charArray
         //註冊service
         //準備觸發2號method
-        peripheralManager.add(service)
+        //peripheralManager.add(service)// book with,example without
+        
+         DispatchQueue.main.async {
+         //book without,example with
+            self.peripheralManager.add(service)
+         }
     }
     
-    //No.2 method
-    func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service:CBService, error: Error?) {
+    //No.2 method tell who am I
+    func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
         guard error == nil else {
             print("ERROR:{\(#function)}\n")
             print(error!.localizedDescription)
             return
         }
         
-        //為藍牙取名
-        let devicenameString = "我的ＭＡＣ裝置"
+        //為藍牙裝置取名
+        let devicenameString = "我的MAC裝置"
         //開始廣播,讓central端可以找到這台裝置
         //準備觸發No.3 method
         peripheral.startAdvertising(
@@ -77,17 +91,22 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
     }
     
     //No.3 method
-    func peripheralManagerDidStartAdvertising(_peripheral: CBPeripheralManager,error: Error?) {
+    //central端已經可以掃描到peripheral裝置
+    //peripheral端的BLE初始化程序已完成
+    func peripheralManagerDidStartAdvertising(_peripheral: CBPeripheralManager, error: Error?) {
         //周邊裝置開始廣播
         print("開始廣播")
     }
     
     //送資料到central
-    func sendData(_ data:Data,uuidString:String) throws {
+    //uuidString:String指定要從哪個characteristic送資料出去
+    //先判斷uuidString是否存在
+    func sendData(_ data: Data, uuidString: String) throws {
         guard let characteristic = charDictionary[uuidString] else {
-            //沒有褶個uuid
+            //沒有這個uuid
             throw SendDataError.CharacteristicNotFound
         }
+        
         peripheralManager.updateValue(
             data,
             for: characteristic,
@@ -96,9 +115,13 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
     }
     
     //Central 端訂閱
-    func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic:CBCharacteristic) {
+    func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic: CBCharacteristic) {
+        
         if peripheral.isAdvertising{
             peripheral.stopAdvertising()
+            print("停止廣播")
+        }
+        if characteristic.uuid.uuidString == C001_CHARACTERISTIC {
             print("訂閱C001")
             do{
                 let data = "Hello Central".data(using: .utf8)
@@ -110,7 +133,7 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
     }
     
     //Central 端取消訂閱
-    func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic:CBCharacteristic) {
+    func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic: CBCharacteristic) {
         if characteristic.uuid.uuidString == C001_CHARACTERISTIC {
             //Central 取消訂閱C001
             print("取消訂閱C001")
@@ -134,11 +157,19 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
             //收到原始資料型態為Data
             let string = "> " + String(data:data,encoding: .utf8)!
             print(string)
+            
+            DispatchQueue.main.async {
+                if self.textView.string.isEmpty {
+                    self.textView.string = string
+                } else {
+                    self.textView.string = self.textView.string + "\n" + string
+                }
+            }
         }
     }
     
     //收到central端要求讀取資料
-    func peripheralManager(_ peripheral: CBPeripheralManager, didReciveRead request: CBATTRequest) {
+    func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
         request.value = nil
         if request.characteristic.uuid.uuidString == C001_CHARACTERISTIC {
             let data = "What do you want?" .data(using: .utf8)
@@ -148,14 +179,6 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
         peripheral.respond(to: request, withResult: .success)
     
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let queue = DispatchQueue.global()//將觸發No.1 method
-        peripheralManager = CBPeripheralManager(delegate: self, queue: queue)
-    }
-    
     
     @IBAction func Enter(_ sender: NSButtonCell) {
        //按下Enter按鈕
@@ -182,7 +205,5 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
         // Update the view, if already loaded.
         }
     }
-
-
 }
 
