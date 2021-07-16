@@ -179,7 +179,7 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
         peripheral.respond(to: request, withResult: .success)
     }
     
-    @IBAction func enterButton(_ sender: Any) {
+    @IBAction func enterButton(_ sender: NSButtonCell) {
         //按下Enter按鈕
         let string = textField.stringValue
         
