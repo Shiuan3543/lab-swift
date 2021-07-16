@@ -48,13 +48,13 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     }
     
     //No.2
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RssI: NSNumber) {
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
         guard let deviceName = peripheral.name else {
             return
         }
-        print("找到藍芽裝置:\(deviceName)")
-        guard deviceName.range(of: "My mobile application") != nil || deviceName.range(of: "Macbook") != nil
+        print("找到藍牙裝置: \(deviceName)")
+        guard deviceName.range(of: "我的MAC裝置") != nil || deviceName.range(of: "Macbook") != nil
         else {
             return
         }
@@ -90,7 +90,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     }
     
     //No.5
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error:Error?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         guard error == nil else {
             print("ERROR: \(#function)")
             print(error!.localizedDescription)
@@ -100,11 +100,11 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         for characteristic in service.characteristics! {
             let uuidString = characteristic.uuid.uuidString
             charDictionary[uuidString] = characteristic
-            print("找到：\(uuidString)")
+            print("找到: \(uuidString)")
         }
     }
     //將資料傳送到peripheral
-    func sendData(_ data: Data, uuidString: String, writeType:CBCharacteristicWriteType) throws {
+    func sendData(_ data: Data, uuidString: String, writeType: CBCharacteristicWriteType) throws {
         guard let characteristic = charDictionary[uuidString] else {
             throw SendDataError.CharacteristicNotFound
         }
@@ -117,11 +117,11 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     //將資料傳送peripheral時如果遇到錯誤會呼叫
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
         if error != nil {
-            print("寫入資料錯誤:\(error!)")
+            print("寫入資料錯誤: \(error!)")
         }
     }
     //
-    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic:CBCharacteristic,error: Error?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         guard error == nil else {
             print("ERROR: \(#function)")
             print(error!)
@@ -134,7 +134,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             print(string)
             
             DispatchQueue.main.async {
-                if self.textView.text.isEmpty{
+                if self.textView.text.isEmpty {
                     self.textView.text = string
                 } else {
                     self.textView.text = self.textView.text + "\n" + string
@@ -160,7 +160,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             //這裡必須根據characteristic的屬性設定
             //來決定使用withoutResponse或withResponse
             try sendData(data!, uuidString: C001_CHARACTERISTIC, writeType: .withResponse)
-        } catch  {
+        } catch {
             print(error)
         }
     }
