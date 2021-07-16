@@ -9,7 +9,7 @@ import Cocoa
 import CoreBluetooth
 
 class ViewController: NSViewController, CBPeripheralManagerDelegate {
-
+    
     @IBOutlet var textView: NSTextView!
     @IBOutlet weak var textField: NSTextField!
     
@@ -17,18 +17,19 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
         case CharacteristicNotFound
     }// 自訂一個錯誤型態
     
-    let  A001_SERVICE = "A001"
+    let A001_SERVICE = "A001"
     let C001_CHARACTERISTIC = "C001"
     //GATT
     
-    var peripheralManager : CBPeripheralManager!
+    var peripheralManager: CBPeripheralManager!
     //記錄所有的characteristic
     var charDictionary = [String: CBMutableCharacteristic]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let queue = DispatchQueue.global()//將觸發No.1 method
+        let queue = DispatchQueue.global()
+        //將觸發No.1 method
         peripheralManager = CBPeripheralManager(delegate: self, queue: queue)
     }
     
@@ -64,10 +65,10 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
         //準備觸發2號method
         //peripheralManager.add(service)// book with,example without
         
-         DispatchQueue.main.async {
-         //book without,example with
+        DispatchQueue.main.async {
+            //book without,example with
             self.peripheralManager.add(service)
-         }
+        }
     }
     
     //No.2 method tell who am I
@@ -106,7 +107,7 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
             throw SendDataError.CharacteristicNotFound
         }
         
-        peripheralManager.updateValue(
+        peripheralManager!.updateValue(
             data,
             for: characteristic,
             onSubscribedCentrals: nil
@@ -116,16 +117,16 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
     //Central 端訂閱
     func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic: CBCharacteristic) {
         
-        if peripheral.isAdvertising{
+        if peripheral.isAdvertising {
             peripheral.stopAdvertising()
             print("停止廣播")
         }
         if characteristic.uuid.uuidString == C001_CHARACTERISTIC {
             print("訂閱C001")
-            do{
+            do {
                 let data = "Hello Central".data(using: .utf8)
                 try sendData(data!, uuidString: C001_CHARACTERISTIC)
-            }catch{
+            } catch {
                 print(error)
             }
         }
@@ -140,7 +141,7 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
     }
     
     //Central 端寫資料到peripheral
-    func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests:[CBATTRequest]) {
+    func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
         guard let at = requests.first else {
             return
         }
@@ -152,9 +153,9 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
             //來向central端回傳「成功收到」訊息
             //若參數為writeWithoutResponse時則不需要回傳訊息
             
-            peripheral.respond(to: at,withResult: .success)
+            peripheral.respond(to: at, withResult: .success)
             //收到原始資料型態為Data
-            let string = "> " + String(data:data,encoding: .utf8)!
+            let string = "> " + String(data: data, encoding: .utf8)!
             print(string)
             
             DispatchQueue.main.async {
@@ -171,16 +172,15 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
         request.value = nil
         if request.characteristic.uuid.uuidString == C001_CHARACTERISTIC {
-            let data = "What do you want?" .data(using: .utf8)
+            let data = "What do you want?".data(using: .utf8)
             request.value = data
         }
         //要回傳的資料透過respond回傳
         peripheral.respond(to: request, withResult: .success)
-    
     }
     
-    @IBAction func enterButton(_ sender: NSButtonCell) {
-       //按下Enter按鈕
+    @IBAction func enterButton(_ sender: Any) {
+        //按下Enter按鈕
         let string = textField.stringValue
         
         //更新Text View 畫面
@@ -201,8 +201,7 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
     
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
 }
-
