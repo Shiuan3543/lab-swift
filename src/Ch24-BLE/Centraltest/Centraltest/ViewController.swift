@@ -26,6 +26,19 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     //記錄所有的characteristic
     var charDictionary = [String: CBCharacteristic]()
     
+    func isPaired() -> Bool {
+        let user = UserDefaults.standard
+        if let uuidString = user.string(forKey: "KEY_PERIPHERAL_UUID") {
+            let uuid = UUID(uuidString: uuidString)
+            let list = centralManager.retrievePeripherals(withIdentifiers: [uuid!])
+            if list.count > 0 {
+                connectPeripheral = list.first!
+                connectPeripheral.delegate = self
+                return true
+            }
+        }
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +47,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         // 觸發No.1
         centralManager = CBCentralManager(delegate: self, queue: queue)
     }
-
+    
     //No.1
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         //判斷藍芽是否開啟，如果不是藍芽4.X，也會傳回店員為開啟
@@ -42,9 +55,15 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             //iOS會出現對話框提醒使用者
             return
         }
-        
-        //觸發No.2
-        centralManager.scanForPeripherals(withServices: nil, options: nil)
+//        //觸發No.2
+//        centralManager.scanForPeripherals(withServices: nil, options: nil)//24-2
+        if isPaired() {
+            //觸發No.3
+            centralManager.connect(connectPeripheral, options: nil)//要求該設備提供的service
+        } else {
+            //觸發No.2
+            centralManager.scanForPeripherals(withServices: nil, options: nil)//掃描周遭
+        }
     }
     
     //No.2
@@ -60,13 +79,19 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
         central.stopScan()
         
+        //斷線處理
+        //儲存重新連線需要的周邊端UUID
+        let user = UserDefaults.standard
+        user.set(peripheral.identifier.uuidString, forKey: "KEY_PERIPHERAL_UUID")
+        user.synchronize()
+
         connectPeripheral = peripheral
         connectPeripheral.delegate = self
         
         //觸發No.3
         centralManager.connect(connectPeripheral, options: nil)
     }
-
+    
     //No.3
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         //清除上一次儲存的characteristic 資料
@@ -175,5 +200,20 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             self.view.endEditing(true)
         }
     }
+    
+    //斷線處理
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral,  error: Error?) {
+        print("連線中斷")
+        if isPaired() {
+            //將觸發No.3
+            centralManager.connect(connectPeripheral, options: nil)
+        }
+    }
+    func unpair() {
+        let user = UserDefaults.standard
+        user.removeObject(forKey: "KEY_PERIPHERAL_UUID")
+        user.synchronize()
+        centralManager.cancelPeripheralConnection(connectPeripheral)
+        //在iOS中要提醒使用者必須從系統設定中『忘記裝置』，否則無法再配對
+    }
 }
-
