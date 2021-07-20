@@ -26,6 +26,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     //記錄所有的characteristic
     var charDictionary = [String: CBCharacteristic]()
     
+    /* 當 central 端重新執行後，嘗試取回 peripheral */
     func isPaired() -> Bool {
         let user = UserDefaults.standard
         if let uuidString = user.string(forKey: "KEY_PERIPHERAL_UUID") {
@@ -45,7 +46,27 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         // Do any additional setup after loading the view.
         let queue = DispatchQueue.global()
         // 觸發No.1
-        centralManager = CBCentralManager(delegate: self, queue: queue)
+        centralManager = CBCentralManager(delegate: self, queue: /*queue*/nil)
+//        // 背景顏色
+//        textView.backgroundColor = UIColor.darkGray
+//
+//        // 文字顏色
+//        textView.textColor = UIColor.white
+//
+//        // 文字字型及大小
+//        textView.font = UIFont(name: "Helvetica-Light", size: 20)
+//
+//        // 文字向左對齊
+//        textView.textAlignment = .left
+//
+//        // 預設文字內容
+//        textView.text = "Swift BLE 起步走"
+//
+//        // 適用的鍵盤樣式 這邊選擇預設的
+//        textView.keyboardType = .default
+//
+//        // 鍵盤上的 return 鍵樣式 這邊選擇預設的
+//        textView.returnKeyType = .default
     }
     
     //No.1
@@ -73,7 +94,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             return
         }
         print("找到藍牙裝置: \(deviceName)")
-        guard deviceName.range(of: "我的MAC裝置") != nil || deviceName.range(of: "Macbook") != nil
+        guard deviceName.range(of: "井民全’s MacBook Pro") != nil || deviceName.range(of: "Macbook") != nil
         else {
             return
         }
@@ -145,7 +166,8 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             print("寫入資料錯誤: \(error!)")
         }
     }
-    //
+    
+    //取得peripheral送過來的資料
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         guard error == nil else {
             print("ERROR: \(#function)")
@@ -215,5 +237,8 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         user.synchronize()
         centralManager.cancelPeripheralConnection(connectPeripheral)
         //在iOS中要提醒使用者必須從系統設定中『忘記裝置』，否則無法再配對
+    }
+    @IBAction func unpairClick(_ sender: UIButton) {
+        unpair()
     }
 }
