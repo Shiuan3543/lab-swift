@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OsX-E2-dqo"; Note = "標籤1"; */
+"OsX-E2-dqo.text" = "帳號";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "U6A-lm-6yn"; Note = "標籤2"; */
+"U6A-lm-6yn.text" = "密碼";

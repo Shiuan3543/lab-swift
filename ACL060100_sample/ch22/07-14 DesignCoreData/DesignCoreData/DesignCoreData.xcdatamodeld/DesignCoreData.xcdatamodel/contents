@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17189" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES">
+        <attribute name="plate" optional="YES" attributeType="String"/>
+        <relationship name="belongto" maxCount="1" deletionRule="Nullify" destinationEntity="UserData" inverseName="own" inverseEntity="UserData"/>
+    </entity>
+    <entity name="UserData" representedClassName="UserData" syncable="YES">
+        <attribute name="cname" optional="YES" attributeType="String"/>
+        <attribute name="iid" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <relationship name="own" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="belongto" inverseEntity="Car"/>
+    </entity>
+    <fetchRequest name="Fetch_by_cname" entity="UserData" predicateString="cname CONTAINS $CNAME"/>
+    <fetchRequest name="Fetch_iid_is_A01" entity="UserData" predicateString="iid == &quot;A01&quot;"/>
+    <elements>
+        <element name="Car" positionX="1620.48046875" positionY="11428.82421875" width="128" height="73"/>
+        <element name="UserData" positionX="1378.15625" positionY="11353.578125" width="128" height="103"/>
+    </elements>
+</model>

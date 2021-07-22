@@ -46,7 +46,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         // Do any additional setup after loading the view.
         let queue = DispatchQueue.global()
         // 觸發No.1
-        centralManager = CBCentralManager(delegate: self, queue: /*queue*/nil)
+        centralManager = CBCentralManager(delegate: self, queue: queue/*nil*/)
 //        // 背景顏色
 //        textView.backgroundColor = UIColor.darkGray
 //
