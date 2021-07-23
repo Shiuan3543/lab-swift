@@ -124,7 +124,7 @@ class ViewController: NSViewController, CBPeripheralManagerDelegate {
         if characteristic.uuid.uuidString == C001_CHARACTERISTIC {
             print("訂閱C001")
             do {
-                let data = "Hello Central".data(using: .utf8)
+                let data = "Hello Centraltest peko".data(using: .utf8)
                 try sendData(data!, uuidString: C001_CHARACTERISTIC)
             } catch {
                 print(error)

@@ -50,23 +50,23 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
 //        // 背景顏色
 //        textView.backgroundColor = UIColor.darkGray
 //
-//        // 文字顏色
-//        textView.textColor = UIColor.white
-//
-//        // 文字字型及大小
-//        textView.font = UIFont(name: "Helvetica-Light", size: 20)
-//
-//        // 文字向左對齊
-//        textView.textAlignment = .left
-//
-//        // 預設文字內容
-//        textView.text = "Swift BLE 起步走"
-//
-//        // 適用的鍵盤樣式 這邊選擇預設的
-//        textView.keyboardType = .default
-//
-//        // 鍵盤上的 return 鍵樣式 這邊選擇預設的
-//        textView.returnKeyType = .default
+        // 文字顏色
+        textView.textColor = UIColor.white
+
+        // 文字字型及大小
+        textView.font = UIFont(name: "Helvetica-Light", size: 20)
+
+        // 文字向左對齊
+        textView.textAlignment = .left
+
+        // 預設文字內容
+        textView.text = "Swift BLE 起步走"
+
+        // 適用的鍵盤樣式 這邊選擇預設的
+        textView.keyboardType = .default
+
+        // 鍵盤上的 return 鍵樣式 這邊選擇預設的
+        textView.returnKeyType = .default
     }
     
     //No.1
