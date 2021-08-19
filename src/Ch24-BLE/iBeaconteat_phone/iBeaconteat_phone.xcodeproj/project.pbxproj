@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F67C4B7626AAC17E007B9CBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C4B7526AAC17E007B9CBC /* AppDelegate.swift */; };
+		F67C4B7826AAC17E007B9CBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C4B7726AAC17E007B9CBC /* SceneDelegate.swift */; };
+		F67C4B7A26AAC17E007B9CBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C4B7926AAC17E007B9CBC /* ViewController.swift */; };
+		F67C4B7D26AAC17E007B9CBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F67C4B7B26AAC17E007B9CBC /* Main.storyboard */; };
+		F67C4B7F26AAC181007B9CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67C4B7E26AAC181007B9CBC /* Assets.xcassets */; };
+		F67C4B8226AAC181007B9CBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F67C4B8026AAC181007B9CBC /* LaunchScreen.storyboard */; };
+		F67C4B8D26AAC181007B9CBC /* iBeaconteat_phoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C4B8C26AAC181007B9CBC /* iBeaconteat_phoneTests.swift */; };
+		F67C4B9826AAC181007B9CBC /* iBeaconteat_phoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C4B9726AAC181007B9CBC /* iBeaconteat_phoneUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F67C4B8926AAC181007B9CBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F67C4B6A26AAC17E007B9CBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F67C4B7126AAC17E007B9CBC;
+			remoteInfo = iBeaconteat_phone;
+		};
+		F67C4B9426AAC181007B9CBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F67C4B6A26AAC17E007B9CBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F67C4B7126AAC17E007B9CBC;
+			remoteInfo = iBeaconteat_phone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F67C4B7226AAC17E007B9CBC /* iBeaconteat_phone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeaconteat_phone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F67C4B7526AAC17E007B9CBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F67C4B7726AAC17E007B9CBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F67C4B7926AAC17E007B9CBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F67C4B7C26AAC17E007B9CBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F67C4B7E26AAC181007B9CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F67C4B8126AAC181007B9CBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F67C4B8326AAC181007B9CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F67C4B8826AAC181007B9CBC /* iBeaconteat_phoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBeaconteat_phoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F67C4B8C26AAC181007B9CBC /* iBeaconteat_phoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconteat_phoneTests.swift; sourceTree = "<group>"; };
+		F67C4B8E26AAC181007B9CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F67C4B9326AAC181007B9CBC /* iBeaconteat_phoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBeaconteat_phoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F67C4B9726AAC181007B9CBC /* iBeaconteat_phoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconteat_phoneUITests.swift; sourceTree = "<group>"; };
+		F67C4B9926AAC181007B9CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F67C4B6F26AAC17E007B9CBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F67C4B8526AAC181007B9CBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F67C4B9026AAC181007B9CBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F67C4B6926AAC17E007B9CBC = {
+			isa = PBXGroup;
+			children = (
+				F67C4B7426AAC17E007B9CBC /* iBeaconteat_phone */,
+				F67C4B8B26AAC181007B9CBC /* iBeaconteat_phoneTests */,
+				F67C4B9626AAC181007B9CBC /* iBeaconteat_phoneUITests */,
+				F67C4B7326AAC17E007B9CBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F67C4B7326AAC17E007B9CBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F67C4B7226AAC17E007B9CBC /* iBeaconteat_phone.app */,
+				F67C4B8826AAC181007B9CBC /* iBeaconteat_phoneTests.xctest */,
+				F67C4B9326AAC181007B9CBC /* iBeaconteat_phoneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F67C4B7426AAC17E007B9CBC /* iBeaconteat_phone */ = {
+			isa = PBXGroup;
+			children = (
+				F67C4B7526AAC17E007B9CBC /* AppDelegate.swift */,
+				F67C4B7726AAC17E007B9CBC /* SceneDelegate.swift */,
+				F67C4B7926AAC17E007B9CBC /* ViewController.swift */,
+				F67C4B7B26AAC17E007B9CBC /* Main.storyboard */,
+				F67C4B7E26AAC181007B9CBC /* Assets.xcassets */,
+				F67C4B8026AAC181007B9CBC /* LaunchScreen.storyboard */,
+				F67C4B8326AAC181007B9CBC /* Info.plist */,
+			);
+			path = iBeaconteat_phone;
+			sourceTree = "<group>";
+		};
+		F67C4B8B26AAC181007B9CBC /* iBeaconteat_phoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				F67C4B8C26AAC181007B9CBC /* iBeaconteat_phoneTests.swift */,
+				F67C4B8E26AAC181007B9CBC /* Info.plist */,
+			);
+			path = iBeaconteat_phoneTests;
+			sourceTree = "<group>";
+		};
+		F67C4B9626AAC181007B9CBC /* iBeaconteat_phoneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F67C4B9726AAC181007B9CBC /* iBeaconteat_phoneUITests.swift */,
+				F67C4B9926AAC181007B9CBC /* Info.plist */,
+			);
+			path = iBeaconteat_phoneUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F67C4B7126AAC17E007B9CBC /* iBeaconteat_phone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F67C4B9C26AAC181007B9CBC /* Build configuration list for PBXNativeTarget "iBeaconteat_phone" */;
+			buildPhases = (
+				F67C4B6E26AAC17E007B9CBC /* Sources */,
+				F67C4B6F26AAC17E007B9CBC /* Frameworks */,
+				F67C4B7026AAC17E007B9CBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iBeaconteat_phone;
+			productName = iBeaconteat_phone;
+			productReference = F67C4B7226AAC17E007B9CBC /* iBeaconteat_phone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F67C4B8726AAC181007B9CBC /* iBeaconteat_phoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F67C4B9F26AAC181007B9CBC /* Build configuration list for PBXNativeTarget "iBeaconteat_phoneTests" */;
+			buildPhases = (
+				F67C4B8426AAC181007B9CBC /* Sources */,
+				F67C4B8526AAC181007B9CBC /* Frameworks */,
+				F67C4B8626AAC181007B9CBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F67C4B8A26AAC181007B9CBC /* PBXTargetDependency */,
+			);
+			name = iBeaconteat_phoneTests;
+			productName = iBeaconteat_phoneTests;
+			productReference = F67C4B8826AAC181007B9CBC /* iBeaconteat_phoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F67C4B9226AAC181007B9CBC /* iBeaconteat_phoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F67C4BA226AAC181007B9CBC /* Build configuration list for PBXNativeTarget "iBeaconteat_phoneUITests" */;
+			buildPhases = (
+				F67C4B8F26AAC181007B9CBC /* Sources */,
+				F67C4B9026AAC181007B9CBC /* Frameworks */,
+				F67C4B9126AAC181007B9CBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F67C4B9526AAC181007B9CBC /* PBXTargetDependency */,
+			);
+			name = iBeaconteat_phoneUITests;
+			productName = iBeaconteat_phoneUITests;
+			productReference = F67C4B9326AAC181007B9CBC /* iBeaconteat_phoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F67C4B6A26AAC17E007B9CBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					F67C4B7126AAC17E007B9CBC = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					F67C4B8726AAC181007B9CBC = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = F67C4B7126AAC17E007B9CBC;
+					};
+					F67C4B9226AAC181007B9CBC = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = F67C4B7126AAC17E007B9CBC;
+					};
+				};
+			};
+			buildConfigurationList = F67C4B6D26AAC17E007B9CBC /* Build configuration list for PBXProject "iBeaconteat_phone" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F67C4B6926AAC17E007B9CBC;
+			productRefGroup = F67C4B7326AAC17E007B9CBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F67C4B7126AAC17E007B9CBC /* iBeaconteat_phone */,
+				F67C4B8726AAC181007B9CBC /* iBeaconteat_phoneTests */,
+				F67C4B9226AAC181007B9CBC /* iBeaconteat_phoneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F67C4B7026AAC17E007B9CBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F67C4B8226AAC181007B9CBC /* LaunchScreen.storyboard in Resources */,
+				F67C4B7F26AAC181007B9CBC /* Assets.xcassets in Resources */,
+				F67C4B7D26AAC17E007B9CBC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F67C4B8626AAC181007B9CBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F67C4B9126AAC181007B9CBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F67C4B6E26AAC17E007B9CBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F67C4B7A26AAC17E007B9CBC /* ViewController.swift in Sources */,
+				F67C4B7626AAC17E007B9CBC /* AppDelegate.swift in Sources */,
+				F67C4B7826AAC17E007B9CBC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F67C4B8426AAC181007B9CBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F67C4B8D26AAC181007B9CBC /* iBeaconteat_phoneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F67C4B8F26AAC181007B9CBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F67C4B9826AAC181007B9CBC /* iBeaconteat_phoneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F67C4B8A26AAC181007B9CBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F67C4B7126AAC17E007B9CBC /* iBeaconteat_phone */;
+			targetProxy = F67C4B8926AAC181007B9CBC /* PBXContainerItemProxy */;
+		};
+		F67C4B9526AAC181007B9CBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F67C4B7126AAC17E007B9CBC /* iBeaconteat_phone */;
+			targetProxy = F67C4B9426AAC181007B9CBC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F67C4B7B26AAC17E007B9CBC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F67C4B7C26AAC17E007B9CBC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F67C4B8026AAC181007B9CBC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F67C4B8126AAC181007B9CBC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F67C4B9A26AAC181007B9CBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F67C4B9B26AAC181007B9CBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F67C4B9D26AAC181007B9CBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34WF485QGG;
+				INFOPLIST_FILE = iBeaconteat_phone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.myself.iBeaconteat-phone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F67C4B9E26AAC181007B9CBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34WF485QGG;
+				INFOPLIST_FILE = iBeaconteat_phone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.myself.iBeaconteat-phone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F67C4BA026AAC181007B9CBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34WF485QGG;
+				INFOPLIST_FILE = iBeaconteat_phoneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.myself.iBeaconteat-phoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBeaconteat_phone.app/iBeaconteat_phone";
+			};
+			name = Debug;
+		};
+		F67C4BA126AAC181007B9CBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34WF485QGG;
+				INFOPLIST_FILE = iBeaconteat_phoneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.myself.iBeaconteat-phoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iBeaconteat_phone.app/iBeaconteat_phone";
+			};
+			name = Release;
+		};
+		F67C4BA326AAC181007B9CBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34WF485QGG;
+				INFOPLIST_FILE = iBeaconteat_phoneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.myself.iBeaconteat-phoneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iBeaconteat_phone;
+			};
+			name = Debug;
+		};
+		F67C4BA426AAC181007B9CBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34WF485QGG;
+				INFOPLIST_FILE = iBeaconteat_phoneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.myself.iBeaconteat-phoneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iBeaconteat_phone;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F67C4B6D26AAC17E007B9CBC /* Build configuration list for PBXProject "iBeaconteat_phone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F67C4B9A26AAC181007B9CBC /* Debug */,
+				F67C4B9B26AAC181007B9CBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F67C4B9C26AAC181007B9CBC /* Build configuration list for PBXNativeTarget "iBeaconteat_phone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F67C4B9D26AAC181007B9CBC /* Debug */,
+				F67C4B9E26AAC181007B9CBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F67C4B9F26AAC181007B9CBC /* Build configuration list for PBXNativeTarget "iBeaconteat_phoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F67C4BA026AAC181007B9CBC /* Debug */,
+				F67C4BA126AAC181007B9CBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F67C4BA226AAC181007B9CBC /* Build configuration list for PBXNativeTarget "iBeaconteat_phoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F67C4BA326AAC181007B9CBC /* Debug */,
+				F67C4BA426AAC181007B9CBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F67C4B6A26AAC17E007B9CBC /* Project object */;
+}
